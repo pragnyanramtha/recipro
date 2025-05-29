@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "recipro_backend": {
+      "candid": "src/recipro_backend/recipro_backend.did",
+      "package": "recipro_backend",
+      "type": "rust"
+    },
+    "recipro_frontend": {
+      "dependencies": [
+        "recipro_backend"
+      ],
+      "source": [
+        "src/recipro_frontend/assets"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

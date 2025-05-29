@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "src/recipro_backend"
+]
+resolver = "2"
