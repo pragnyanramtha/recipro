@@ -1,3 +1,107 @@
+/* Basic body reset - important for background video */
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevents scrollbars if video slightly overflows */
+  position: relative; /* Ensure stacking context for z-index */
+  /* Add a fallback background image for when the video doesn't load or on mobile */
+  background-colour: #000000;
+  background-image: url(bg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Ensure the body has a minimum height to contain the video */
+  min-height: 100vh;
+}
+
+/* Style for the background video */
+#background-video {
+  position: fixed; /* Fixes the video to the viewport */
+  right: 0;
+  bottom: 0;
+  min-width: 100%; /* Ensures video covers full width */
+  min-height: 100%; /* Ensures video covers full height */
+  width: auto; /* Allows width to adjust proportionally */
+  height: auto; /* Allows height to adjust proportionally */
+  z-index: -1; /* Puts the video behind other content */
+  filter: brightness(50%); /* Optional: Make the video darker for better text readability */
+  object-fit: cover; /* Ensures the video covers the entire element without distortion */
+}
+
+/*
+ Crucial overrides for your existing content containers:
+ Make their backgrounds transparent so the video can show through.
+ Use !important to ensure these override rules from index.css.
+*/
+.home-container1 {
+  background-color: transparent !important; /* Override background from index.css */
+  position: relative; /* Keep this to ensure z-index works for content */
+  z-index: 1; /* Ensures this container and its content appear above the video */
+  /* You might want to adjust positioning/layout here if the video shifts things */
+  /* For instance, if you want content centered over the video: */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
+.home-hero {
+  background-color: transparent !important; /* Override background from index.css */
+  position: relative; /* Ensure it stays above the video */
+  z-index: 1; /* Make sure it's on top */
+  /* You might need to adjust padding or margin here if it looks off */
+}
+
+/* Ensure your header (home-navbar) also has a transparent background if you want the video behind it too */
+/* If you want the header to be solid black, you can remove this rule */
+.home-navbar {
+  background-color: transparent !important; /* Override background from index.css */
+  position: relative; /* Keep its relative positioning */
+  z-index: 2; /* Make sure the navbar is on top of other content */
+}
+
+/* Make sure text is readable on the video background */
+/* Apply this to specific text elements within your content */
+.home-header11,
+.home-caption10,
+.home-navlink1,
+.home-view,
+.home-learn1,
+.home-logo1,
+.home-text15 {
+  color: white !important; /* Force white text over the video */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Optional: Add text shadow for better readability */
+}
+
+
+/* Media query for mobile devices */
+@media (max-width: 767px) { /* Using 767px from your index.css breakpoints */
+  #background-video {
+      display: none; /* Hide the video on smaller screens */
+  }
+
+  body {
+      /* The fallback background-image set on body will be active here */
+      background-attachment: fixed; /* Keep background image fixed on mobile */
+  }
+
+  /* Reapply original background colors for elements when video is hidden on mobile */
+  .home-container1 {
+      background-color: #27272D !important; /* Reapply original background */
+  }
+
+  .home-navbar {
+      background-color: #000000 !important; /* Reapply original background */
+  }
+
+  .home-hero {
+      background-color: #000000 !important; /* Reapply original background */
+  }
+
+  /* You might need to adjust other mobile-specific styles if they conflict */
+}
+
+
 .home-container1 {
   width: 100%;
   display: flex;

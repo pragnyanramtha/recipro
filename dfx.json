@@ -12,7 +12,10 @@
       "source": [
         "src/recipro_frontend/assets"
       ],
-      "type": "assets"
+      "type": "assets",
+      "frontend": {
+        "entrypoint": "src/recipro_frontend/content.html"
+      }
     }
   },
   "defaults": {

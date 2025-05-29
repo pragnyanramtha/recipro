@@ -1,14 +1,15 @@
+# recipro/src/recipro_backend/Cargo.toml
 [package]
 name = "recipro_backend"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [lib]
 crate-type = ["cdylib"]
 
 [dependencies]
-candid = "0.10"
-ic-cdk = "0.17"
-ic-cdk-timers = "0.11" # Feel free to remove this dependency if you don't need timers
+candid = "0.9.0"         # For Candid serialization/deserialization
+ic-cdk = "0.11.0"        # Core Internet Computer Development Kit
+ic-cdk-macros = "0.11.0" # Macros for `query` and `update` functions
+serde = { version = "1.0", features = ["derive"] } # For Rust struct serialization
+# Add any other dependencies if you've added them
