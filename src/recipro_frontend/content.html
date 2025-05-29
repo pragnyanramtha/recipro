@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>content - Character NFT template</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./content.css" />
+    <link rel="stylesheet" href="./posts.css">
+</head>
+<body>
+    <div>
+        <div class="content-container1">
+            <h1 class="content-text1">Recipro</h1>
+            <div>
+                <div class="content-container3">
+                    <script>
+                        // This inline script is from your builder, it's fine.
+                        (function(){
+                            const menuButton = document.getElementById('menuButton');
+                            const dashboardSidebar = document.getElementById('dashboardSidebar');
+                            const sidebarOverlay = document.getElementById('sidebarOverlay');
+                            function toggleSidebar() {
+                                dashboardSidebar.classList.toggle('active');
+                                sidebarOverlay.classList.toggle('active');
+                            }
+                            menuButton.addEventListener('click', toggleSidebar);
+                            sidebarOverlay.addEventListener('click', toggleSidebar);
+                        })()
+                    </script>
+                </div>
+            </div>
+            <div class="content-container4"></div>
+
+            <section id="create-post-section" style="
+                max-width: 600px; margin: 20px auto; padding: 20px;
+                background-color: #1a1a1a; border-radius: 8px; color: #fff;
+                box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Green glow */
+            ">
+                <h2 style="color: #4CAF50; margin-bottom: 15px;">Create New Post</h2>
+                <form id="post-form" style="display: flex; flex-direction: column;">
+                    <textarea id="post-content" placeholder="What's on your mind?" rows="4" required style="
+                        width: 100%; padding: 10px; margin-bottom: 15px;
+                        border: 1px solid #4CAF50; border-radius: 5px;
+                        background-color: #2a2a2a; color: #eee;
+                        box-sizing: border-box; /* Include padding in width */
+                    "></textarea>
+                    <button type="submit" style="
+                        background-color: #007bff; color: white; padding: 10px 20px;
+                        border: none; border-radius: 5px; cursor: pointer; font-size: 16px;
+                        transition: background-color 0.3s ease;
+                    ">Post</button>
+                </form>
+            </section>
+
+            <section id="posts-feed" style="
+                max-width: 600px; margin: 20px auto; padding: 20px;
+                background-color: #1a1a1a; border-radius: 8px; color: #fff;
+                box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Green glow */
+            ">
+                <h2 style="color: #4CAF50; margin-bottom: 15px;">Recent Posts</h2>
+                <div id="posts-container">
+                    <p style="text-align: center; color: #aaa;">Loading posts...</p>
+                </div>
+            </section>
+            <div class="social-media-homepage">
+                <header class="content-container6 header"></header>
+                <aside id="dashboardSidebar" class="content-container7 dashboard-sidebar">
+                    <nav class="content-container8 dashboard-nav">
+                        <ul class="dashboard-menu list">
+                            <li class="dashboard-item list-item">
+                                <a href="#">
+                                    <span class="content-text2 dashboard-link active">Home</span>
+                                </a>
+                            </li>
+                            <li class="dashboard-item list-item">
+                                <a href="#">
+                                    <span class="content-text3 dashboard-link">Information</span>
+                                </a>
+                            </li>
+                            <li class="dashboard-item list-item">
+                                <a href="#">
+                                    <span class="content-text4 dashboard-link">Profile</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </aside>
+                <div id="sidebarOverlay" class="overlay"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+
+    <script defer="" src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+</body>
+</html>

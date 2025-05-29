@@ -1,0 +1,26 @@
+/* recipro/src/recipro_frontend/posts.css */
+.post-card {
+    background-color: #2a2a2a;
+    border: 1px solid #4CAF50;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.3); /* Subtle green glow */
+}
+
+.post-content {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.post-meta {
+    font-size: 0.85em;
+    color: #bbb;
+    text-align: right;
+}
+
+.post-author {
+    font-weight: bold;
+    color: #007bff;
+}
