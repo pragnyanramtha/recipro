@@ -2,10 +2,12 @@
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden; /* Prevents scrollbars if video slightly overflows */
+  height: 100%; /* or unset, depending on desired layout */
+  overflow-x: hidden; /* Hide horizontal scrollbar if not needed */
+  overflow-y: scroll; /* Ensure vertical scrolling is enabled *//* Prevents scrollbars if video slightly overflows */
   position: relative; /* Ensure stacking context for z-index */
   /* Add a fallback background image for when the video doesn't load or on mobile */
-  background-colour: #000000;
+  background-color: #000000;  
   background-image: url(bg.png);
   background-size: cover;
   background-position: center;

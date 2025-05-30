@@ -10,11 +10,11 @@
         "recipro_backend"
       ],
       "source": [
-        "src/recipro_frontend/assets"
+        "src/recipro_frontend/dist"
       ],
       "type": "assets",
       "frontend": {
-        "entrypoint": "src/recipro_frontend/content.html"
+        "entrypoint": "src/recipro_frontend/dist/index.html"
       }
     }
   },
