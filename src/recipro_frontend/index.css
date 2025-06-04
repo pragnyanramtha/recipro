@@ -7,8 +7,7 @@ body {
   overflow-y: scroll; /* Ensure vertical scrolling is enabled *//* Prevents scrollbars if video slightly overflows */
   position: relative; /* Ensure stacking context for z-index */
   /* Add a fallback background image for when the video doesn't load or on mobile */
-  background-color: #000000;  
-  background-image: url(bg.png);
+  background-color: #000000;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
