@@ -1,96 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>content - Character NFT template</title>
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./content.css" />
-    <link rel="stylesheet" href="./posts.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipro - Your Feed</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./content.css"> <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Basic styling for demonstration if not using Tailwind or custom CSS fully */
+        .post-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+        .post-author {
+            font-weight: bold;
+            color: #4a4a4a;
+        }
+        .post-content {
+            margin-top: 8px;
+            margin-bottom: 12px;
+            color: #333;
+        }
+        .post-meta {
+            font-size: 0.8em;
+            color: #888;
+        }
+        .like-button {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 4px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 8px;
+        }
+        .like-button:hover {
+            background-color: #e0e0e0;
+        }
+        .liked {
+            background-color: #6366f1;
+            color: white;
+        }
+    </style>
 </head>
-<body>
-    <div>
-        <div class="content-container1">
-            <h1 class="content-text1">Recipro</h1>
-            <div>
-                <div class="content-container3">
-                    <script>
-                        // This inline script is from your builder, it's fine.
-                        (function(){
-                            const menuButton = document.getElementById('menuButton');
-                            const dashboardSidebar = document.getElementById('dashboardSidebar');
-                            const sidebarOverlay = document.getElementById('sidebarOverlay');
-                            function toggleSidebar() {
-                                dashboardSidebar.classList.toggle('active');
-                                sidebarOverlay.classList.toggle('active');
-                            }
-                            menuButton.addEventListener('click', toggleSidebar);
-                            sidebarOverlay.addEventListener('click', toggleSidebar);
-                        })()
-                    </script>
-                </div>
-            </div>
-            <div class="content-container4"></div>
-
-            <section id="create-post-section" style="
-                max-width: 600px; margin: 20px auto; padding: 20px;
-                background-color: #1a1a1a; border-radius: 8px; color: #fff;
-                box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Green glow */
-            ">
-                <h2 style="color: #4CAF50; margin-bottom: 15px;">Create New Post</h2>
-                <form id="post-form" style="display: flex; flex-direction: column;">
-                    <textarea id="post-content" placeholder="What's on your mind?" rows="4" required style="
-                        width: 100%; padding: 10px; margin-bottom: 15px;
-                        border: 1px solid #4CAF50; border-radius: 5px;
-                        background-color: #2a2a2a; color: #eee;
-                        box-sizing: border-box; /* Include padding in width */
-                    "></textarea>
-                    <button type="submit" style="
-                        background-color: #007bff; color: white; padding: 10px 20px;
-                        border: none; border-radius: 5px; cursor: pointer; font-size: 16px;
-                        transition: background-color 0.3s ease;
-                    ">Post</button>
-                </form>
-            </section>
-
-            <section id="posts-feed" style="
-                max-width: 600px; margin: 20px auto; padding: 20px;
-                background-color: #1a1a1a; border-radius: 8px; color: #fff;
-                box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Green glow */
-            ">
-                <h2 style="color: #4CAF50; margin-bottom: 15px;">Recent Posts</h2>
-                <div id="posts-container">
-                    <p style="text-align: center; color: #aaa;">Loading posts...</p>
-                </div>
-            </section>
-            <div class="social-media-homepage">
-                <header class="content-container6 header"></header>
-                <aside id="dashboardSidebar" class="content-container7 dashboard-sidebar">
-                    <nav class="content-container8 dashboard-nav">
-                        <ul class="dashboard-menu list">
-                            <li class="dashboard-item list-item">
-                                <a href="#">
-                                    <span class="content-text2 dashboard-link active">Home</span>
-                                </a>
-                            </li>
-                            <li class="dashboard-item list-item">
-                                <a href="#">
-                                    <span class="content-text3 dashboard-link">Information</span>
-                                </a>
-                            </li>
-                            <li class="dashboard-item list-item">
-                                <a href="#">
-                                    <span class="content-text4 dashboard-link">Profile</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </aside>
-                <div id="sidebarOverlay" class="overlay"></div>
-            </div>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+    <header class="bg-white shadow-sm p-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-indigo-600">Recipro Feed</h1>
+        <div class="flex items-center space-x-4">
+            <span id="loggedInPrincipal" class="text-gray-700 text-sm"></span>
+            <button id="logoutButton" class="bg-red-500 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-medium">Logout</button>
         </div>
-    </div>
+    </header>
 
-    <script type="module" src="./app.js"></script>
+    <main class="flex-grow container mx-auto p-4 max-w-2xl">
+        <section class="bg-white shadow-md rounded-lg p-6 mb-8">
+            <h2 class="text-xl font-semibold mb-4">Create New Post</h2>
+            <textarea id="postContent" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" rows="4" placeholder="What's on your mind?"></textarea>
+            <button id="submitPostButton" class="mt-4 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-md font-medium">Post</button>
+        </section>
 
-    <script defer="" src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+        <section id="postsContainer">
+            <h2 class="text-xl font-semibold mb-4">Recent Posts</h2>
+            <p id="loadingMessage" class="text-gray-500 text-center">Loading posts...</p>
+        </section>
+    </main>
+
+    <script type="module" src="./src/content.js"></script>
 </body>
 </html>

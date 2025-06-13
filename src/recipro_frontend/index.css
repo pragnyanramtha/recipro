@@ -441,7 +441,7 @@ body {
   font-size: 3em;
   margin-top: 0px;
   font-weight: 900;
-  margin-right: 225px;
+  margin-right: 100px;
   padding-left: 0px;
   padding-right: 0px;
   animation-name: fadeInRightBig;
@@ -461,8 +461,8 @@ body {
   text-align: right;
   font-weight: 600;
   line-height: 40px;
-  margin-right: 225px;
-  padding-left: 700px;
+  margin-right: 100px;
+  margin-left: 500px;
   animation-name: fadeInRight;
   padding-bottom: var(--dl-layout-space-unit);
   animation-delay: 0s;
