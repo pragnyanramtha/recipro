@@ -24,7 +24,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-bottom: 500px;
+  padding-bottom: 100px;
   justify-content: center;
 }
  
@@ -37,7 +37,7 @@
   max-width: 600px;
   align-items: center;
   flex-shrink: 0;
-  padding-top: 256px;
+  padding-top: 20px;
   border-radius: var(--dl-layout-radius-radius4);
   flex-direction: column;
   justify-content: center;
@@ -161,7 +161,7 @@
 .sign-in2-textinput1 {
   width: 100%;
   border-color: var(--dl-color-theme-primary1);
-  background-color: transparent;
+  background-color: white;
 }
  
 .sign-in2-password {

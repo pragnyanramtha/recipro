@@ -46,7 +46,7 @@ const compactNumber = (value) => {
     return shortValue + suffixes[suffixNum];
 };
 
-//render danh sách liên hệ
+
 const userOnline = (() => {
     const uersOnl = [
         {
@@ -698,11 +698,11 @@ const app = (() => {
                     user.isLogin = false;
                 });
                 localStorage.setItem("users", JSON.stringify(users));
-                this.querySelector("a").setAttribute("href", "index.html");
+                this.querySelector("a").setAttribute("href", "s2.html");
                 this.querySelector("a").click();
             };
 
-            //mở đóng box
+            
             function showBox() {
                 showOverplay(); 
                 checkSubmit();

@@ -63,7 +63,7 @@ if (itemsHeaderRight.length != 0) {
   const titleNewNotify = $(".new-notify__title");
 
   if (titleNewNotify) {
-    //show thông báo
+    
     const notifiesHeader = (() => {
       const notifies = [
         {
@@ -263,7 +263,7 @@ const F = (() => {
       firstName: "Demo",
       lastName: "User",
       fullName: "Demo User",    
-      phone: "0000000000",
+      phone: "000000000",
       password: "123456",
       avatar: "./assets/img/avatar-nam.jpg",
       postLiked: [],

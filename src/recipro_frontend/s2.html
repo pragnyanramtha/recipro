@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./assets/img/logo-favicon.png"
+      type="image/x-icon"
+    />
+    <title>Facebook - Đăng nhập hoặc đăng ký</title>
+    <link rel="stylesheet" href="./assets/css/base.css" />
+    <link rel="stylesheet" href="./vendors/css/cute-alert.css" />
+    <link rel="stylesheet" href="./assets/css/login.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <div class="login">
+        <div class="login-left">
+          <div class="login-left__img">
+            <img
+              src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg"
+              alt=""
+            />
+          </div>
+
+          <div class="login-left__text">
+            Recipro helps u connect and share with the people in your life.
+          </div>
+        </div>
+        <div class="login-right">
+          <div class="form-login">
+            <form action="home.html">
+              <input
+                value="0000000000"
+                id="TK"
+                type="text"
+                placeholder="Email or phone number"
+                class="form-login__id"
+                required
+              />
+              <input
+                value="123456"
+                id="PW"
+                type="password"
+                placeholder="Password"
+                class="form-login__pw"
+                required
+              />
+              <button type="submit" class="form-login__btn btn">
+                Log In
+              </button>
+            </form>
+            <a href="#" onclick="return false" class="form-login__text-forgetpw"
+              >forgot password</a
+            >
+            <div class="form-hr"></div>
+            <button class="form-signup__btn btn">Create new account</button>
+          </div>
+          <div class="login-right__text">
+            <span>create a page</span> for a celebrity, brand or business.
+          </div>
+        </div>
+      </div>
+      <div class="overplay">
+        <div class="overplay-body">
+          <!-- Đăng ký -->
+          <div class="sign-up">
+            <div class="sign-up__head">
+              <div class="sign-up__heading">Register</div>
+              <p class="sign-up__sub-heading">Quick and easy.</p>
+              <img
+                src="https://static.xx.fbcdn.net/rsrc.php/v3/y2/r/__geKiQnSG-.png"
+                alt=""
+                class="sign-up__close"
+              />
+            </div>
+
+            <div class="form-hr"></div>
+
+            <form class="sign-up__action" action="home.html">
+              <div class="sign-up__name">
+                <input
+                  type="text"
+                  class="sign-up__first-name"
+                  placeholder="surname"
+                  required
+                />
+                <input
+                  type="text"
+                  class="sign-up__last-name"
+                  placeholder="last name"
+                  required
+                />
+              </div>
+              <input
+                type="text"
+                class="sign-up__phone"
+                placeholder="email or phone number"
+                required
+              />
+              <input
+                type="password"
+                class="sign-up__pw"
+                placeholder="Password"
+                required
+              />
+              <div class="sign-up__gender">
+                <div class="sign-up__gender-head">Giới tính</div>
+                <span class="sign-up__gender-icon"></span>
+                <div class="sign-up__gender-radio">
+                  <label for="male" class="gender-radio__male">
+                    male
+                    <input checked type="radio" name="gender" id="male" />
+                  </label>
+                  <label for="female" class="gender-radio__female">
+                    female
+                    <input type="radio" name="gender" id="female" />
+                  </label>
+                </div>
+              </div>
+              <div class="sign-up__policy">By clicking Sign Up, you agree to our 
+                <span>Terms, Data Policy</span> and
+                <span>cookie Policy</span>. You can receive our notifications via SMS and unsubscribe at any time.
+              </div>
+              <button type="submit" class="btn sign-up__btn">Register</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./vendors/js/cute-alert.js"></script>
+    <script src="./assets/js/disclaimer.js"></script>
+    <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/login.js"></script>
+  </body>
+</html>
