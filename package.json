@@ -14,5 +14,8 @@
   "type": "module",
   "workspaces": [
     "src/recipro_frontend"
-  ]
+  ],
+  "dependencies": {
+    "@nfid/identitykit": "^1.0.13"
+  }
 }

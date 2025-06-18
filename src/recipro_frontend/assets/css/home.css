@@ -15,9 +15,9 @@
     max-width: 1365px;
     margin: 0 auto;
 }
-
+    
 .app.dark {
-    --bg-color: #18191a;
+    --bg-color: #000000;
     --white-color: #242526;
     --text-color: #e4e6eb;
     --hover-item: rgb(31, 32, 32);

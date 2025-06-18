@@ -68,8 +68,8 @@ signUpForm.onsubmit = (e) => {
         e.preventDefault()
         cuteAlert({
             type: "error",
-            title: "Lỗi",
-            message: "Sdt hoặc email đã tồn tại!",
+            title: "Error",
+            message: "wrong password or username!",
             buttonText: "Okay"
         })
     }
@@ -98,8 +98,8 @@ loginForm.onsubmit = (e) => {
         e.preventDefault()
         cuteAlert({
             type: "error",
-            title: "Lỗi",
-            message: "Sai tên tài khoản hoặc mật khẩu!",
+            title: "Error",
+            message: "Wrong phone or password!",
             buttonText: "Okay"
         })
     }

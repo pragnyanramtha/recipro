@@ -6,7 +6,7 @@
 }
 
 .app.dark {
-    --bg-color: #18191a;
+    --bg-color: #000000;
     --white-color: #242526;
     --text-color: #e4e6eb;
     --hover-item: rgb(31, 32, 32);
@@ -302,7 +302,17 @@
     font-size: 1.7rem;
     font-weight: 600;
 }
-
+.internet-identity {
+    display: block;
+    background-color: rgb(255, 37, 37);
+    height: 42px;
+    width: 100%;
+    line-height: 36px;
+    padding: 0 60px;
+    margin: 20px auto;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
 /* -------------- RESP ------------------ */
 
 @media (max-width: 1024px) {

@@ -162,7 +162,7 @@ if (itemsHeaderRight.length != 0) {
 
           if (titleNewNotify) {
           }
-          //kiểm tra có còn thông báo mới hay không
+          
           if (newNotifies.length === 0) {
             titleNewNotify.style.display = "none";
             countNotify.style.display = "none";
@@ -203,7 +203,7 @@ if (itemsHeaderRight.length != 0) {
 }
 
 window.onclick = function (e) {
-  //tắt submenu khi click ngoài vùng
+ 
   if (itemsHeaderRight.length != 0) {
     const menuSub =
       e.target.closest(".header-right__item") ||
@@ -252,7 +252,7 @@ const F = (() => {
       fullName: "Freight AP TV",
       phone: "0123123124",
       password: "123",
-      avatar: "./assets/img/Home/faptv.jpg",
+      avatar: "./assets/img/Home/user2.jpg",
       postLiked: ["0"],
       cmtLiked: ["1"],
       isLogin: false,
@@ -263,7 +263,7 @@ const F = (() => {
       firstName: "Demo",
       lastName: "User",
       fullName: "Demo User",    
-      phone: "000000000",
+      phone: "0000000000",
       password: "123456",
       avatar: "./assets/img/avatar-nam.jpg",
       postLiked: [],
@@ -289,7 +289,7 @@ const F = (() => {
       id: 1,
       idUser: 1,
       time: 4,
-      bg: "./assets/img/Home/faptv-bg.jpg",
+      bg: "./assets/img/Home/ape.avif",
       content: "Guys i made a new nft anyone interested in buying?",
       like: 2300,
       cmt: 52,
@@ -300,7 +300,7 @@ const F = (() => {
       id: 2,
       idUser: 1,
       time: 7,
-      bg: "./assets/img/Home/meow-bg.jpg",
+      bg: "./assets/img/Home/ukri.jpg",
       content:
         "Ukraine needs ur help, please donate to this wallet ###-###-###-### , directy from u to us , no middle men",
       like: 1200,
@@ -315,7 +315,7 @@ const F = (() => {
       id: 0,
       idUser: 0,
       idPost: 1,
-      content: "Here is 3 bitcoin, Hope this helps",
+      content: "Thats a really nice nft, whats it worth?",
       like: 252,
       sub: false,
       deleted: false,
@@ -324,7 +324,7 @@ const F = (() => {
       id: 1,
       idUser: 1,
       idPost: 1,
-      content: "Thats a really nice nft, whats it worth?",
+      content: "Guys , do you like this nft?",
       like: 134,
       sub: false,
       deleted: false,
@@ -333,7 +333,7 @@ const F = (() => {
       id: 2,
       idUser: 1,
       idPost: 0,
-      content: "Thanks!, i'm thinking to sell it for 1 bitcoin",
+      content: "Just donated blood yesterday, it was a great experience, and honestly felt rejuvenating",
       like: 152,
       sub: false,
       deleted: false,
@@ -342,7 +342,7 @@ const F = (() => {
       id: 3,
       idUser: 0,
       idPost: 1,
-      content:"Thats a great price!!!, i'm also gonna give u some doge , keep making such nft's ",
+      content:"this is good art work, i like it",
       like: 12,
       sub: true,
       deleted: false,
@@ -352,7 +352,7 @@ const F = (() => {
       id: 4,
       idUser: 1,
       idPost: 1,
-      content: "My pleasure",
+      content: "Thanks!, i'm thinking to sell it for 10 XDC",
       like: 11,
       sub: true,
       deleted: false,

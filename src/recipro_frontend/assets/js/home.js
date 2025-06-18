@@ -102,7 +102,7 @@ const userOnline = (() => {
     };
 })().render();
 
-//lấy id từ storage
+
 let id;
 const x = users.find((user, index) => {
     id = index;
@@ -692,13 +692,13 @@ const app = (() => {
                 document.body.style.overflow = "hidden";
             }
 
-            //đăng xuất
+            
             $(".nav-logout").onclick = function () {
                 users.forEach((user) => {
                     user.isLogin = false;
                 });
                 localStorage.setItem("users", JSON.stringify(users));
-                this.querySelector("a").setAttribute("href", "s2.html");
+                this.querySelector("a").setAttribute("href", "signin.html");
                 this.querySelector("a").click();
             };
 
