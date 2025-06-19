@@ -176,7 +176,7 @@ if (itemsHeaderRight.length != 0) {
           this.render(oldNotifies, oldNotifyList);
         },
         handle() {
-          //clicked vào thông báo mới
+          
           newNotifyList.onclick = (e) => {
             const itemNew = e.target.closest(".notify-content__item");
             if (itemNew) {
@@ -215,7 +215,7 @@ window.onclick = function (e) {
     }
   }
 
-  //vẫn là sub menu nhưng là của newfeed :v
+
   if ($(".newsfeed__info-setting-list")) {
     if (
       !e.target.closest(".newsfeed__info-setting-list.active") &&
@@ -361,7 +361,7 @@ const F = (() => {
   ];
 
   const obj = {
-    mode: "light",
+    mode: "dark",
   };
   //wtf is this?????????????
   const messengers = [

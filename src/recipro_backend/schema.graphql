@@ -1,0 +1,168 @@
+# --- User Schema ---
+type User {
+  # Unique identifier for the user.
+  # This maps to the `id` field in your `users` array in JS.
+  # In a real ICP setup, this might be Principal ID.
+  id: ID!
+
+  # User's first name, nullable if it can be empty
+  firstName: String
+
+  # User's last name, nullable if it can be empty
+  lastName: String
+
+  # User's full name, derived or directly stored
+  fullName: String!
+
+  # User's phone number (used as a unique identifier in your JS example)
+  # For ICP, consider using Internet Identity or Principal.
+  phone: String!
+
+  # Password is NOT stored here directly for security reasons.
+  # If you were to store a hash, it would be a backend concern, not part of the public schema.
+  # password: String! # DO NOT EXPOSE IN SCHEMA FOR FRONTEND
+
+  # URL to the user's avatar image
+  avatar: String!
+
+  # URL to the user's background/cover image
+  bg: String
+
+  # Array of Post IDs that the user has liked.
+  # This is a denormalized list for quick access.
+  postLiked: [ID!]!
+
+  # Array of Comment IDs that the user has liked.
+  # This is a denormalized list for quick access.
+  cmtLiked: [ID!]!
+
+  # This maps to `isLogin` and `onl` in your JS.
+  # These are typically transient session states and wouldn't be part of a persistent GraphQL schema.
+  # isLogin: Boolean
+  # onl: Int
+}
+
+# --- Post (Newsfeed) Schema ---
+type Post {
+  # Unique identifier for the post.
+  id: ID!
+
+  # The ID of the user who authored this post.
+  # We establish a relationship to the User type.
+  author: User! @relation(name: "PostAuthor")
+
+  # Time in hours ago (as per your JS).
+  # For a backend, this would typically be a timestamp (e.g., Unix timestamp in milliseconds/nanoseconds).
+  time: Int! # Or convert to DateTime if GraphQL server supports it
+
+  # URL to the post's background image (if any)
+  bg: String
+
+  # The main content text of the post
+  content: String!
+
+  # Number of likes on the post.
+  # This is a denormalized count.
+  like: Int!
+
+  # Number of comments on the post.
+  # This is a denormalized count.
+  cmt: Int! # Renamed from 'cmt' to 'commentsCount' for clarity
+
+  # Number of shares on the post.
+  share: Int!
+
+  # Boolean flag indicating if the post is soft-deleted.
+  deleted: Boolean!
+}
+
+# --- Comment Schema ---
+type Comment {
+  # Unique identifier for the comment.
+  id: ID!
+
+  # The ID of the user who authored this comment.
+  author: User! @relation(name: "CommentAuthor")
+
+  # The ID of the post this comment belongs to.
+  post: Post! @relation(name: "PostComments")
+
+  # The content text of the comment.
+  content: String!
+
+  # Number of likes on the comment.
+  like: Int!
+
+  # Boolean flag indicating if this is a sub-comment (reply).
+  # Corresponds to `sub` in your JS.
+  isSubComment: Boolean!
+
+  # Optional ID of the parent comment if this is a sub-comment.
+  # Corresponds to `parentIdCmt` in your JS.
+  parentComment: Comment @relation(name: "SubComments") # Self-referencing relation, nullable
+
+  # Boolean flag indicating if the comment is soft-deleted.
+  deleted: Boolean!
+}
+
+# --- Message Schema (from `messengers` array) ---
+type Message {
+  # Unique identifier for the message.
+  id: ID!
+
+  # The ID of the user who sent or is related to this message.
+  sender: User! @relation(name: "MessageSender") # Renamed from idUser for clarity
+
+  # Boolean indicating if the message is authored by the current user (from their perspective).
+  # This is typically a frontend/session concern, but included for structural consistency if needed on backend.
+  isAuthor: Boolean! # Renamed from 'Author' for clarity
+
+  # The content text of the message.
+  content: String!
+
+  # Boolean flag indicating if the message is soft-deleted.
+  deleted: Boolean!
+
+  # Boolean indicating if this is the "end" message in a conversation.
+  # This seems like a UI/contextual flag from your JS.
+  isEndMessage: Boolean! # Renamed from 'endMess' for clarity
+
+  # If you want to track reactions to messages (like 'isReact' in your JS)
+  # isReact: Boolean!
+}
+
+# --- Root Query and Mutation Types (standard for GraphQL) ---
+# Sudograph will automatically generate read/create/update/delete operations
+# for each of your defined types. You can customize which ones are exposed.
+# The `schema.graphql` only defines the types. Sudograph's macro will
+# expand this into the full Query and Mutation types.
+
+# Example of what Sudograph would generate (you don't write this, it's implied):
+# type Query {
+#   readUser(id: ID!): User
+#   readUser(filter: UserFilter): [User!]!
+#   readPost(id: ID!): Post
+#   readPost(filter: PostFilter): [Post!]!
+#   readComment(id: ID!): Comment
+#   readComment(filter: CommentFilter): [Comment!]!
+#   readMessage(id: ID!): Message
+#   readMessage(filter: MessageFilter): [Message!]!
+# }
+
+# type Mutation {
+#   createUser(username: String!, email: String!, ...): User!
+#   createPost(author: ID!, content: String!, ...): Post!
+#   createComment(author: ID!, post: ID!, content: String!, ...): Comment!
+#   createMessage(sender: ID!, content: String!, ...): Message!
+#   # update/delete mutations as well
+# }
+
+# Input types for create/update would also be auto-generated by Sudograph, e.g.:
+# input CreateUserInput {
+#   username: String!
+#   email: String
+#   avatar: String!
+#   bg: String
+#   postLiked: [ID!]
+#   cmtLiked: [ID!]
+# }
