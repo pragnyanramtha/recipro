@@ -14,8 +14,10 @@ const newfeeds = JSON.parse(localStorage.getItem("newfeeds")) || [];
 const users = JSON.parse(localStorage.getItem("users")) || [];
 const comments = JSON.parse(localStorage.getItem("comments")) || [];
 
-console.log(newfeeds);
+
 console.log(users);
+
+console.log(users.at(-1).firstName)
 
 for (let i = 0; i < moreBtn.length; i++) {
     moreBtn[i].onclick = function () {
