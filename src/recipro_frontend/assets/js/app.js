@@ -252,7 +252,7 @@ const F = (() => {
       fullName: "Freight AP TV",
       phone: "0123123124",
       password: "123",
-      avatar: "./assets/img/Home/user2.jpg",
+      avatar: "./assets/img/Home/user-2.jpg",
       postLiked: ["0"],
       cmtLiked: ["1"],
       isLogin: false,
