@@ -1,8 +1,15 @@
 {
   "recipro_backend": {
+<<<<<<< HEAD
     "ic": "vwxcj-dqaaa-aaaac-qamha-cai"
   },
   "recipro_frontend": {
     "ic": "vrwe5-oiaaa-aaaac-qamhq-cai"
+=======
+    "ic": "ramco-aiaaa-aaaac-awbwq-cai"
+  },
+  "recipro_frontend": {
+    "ic": "rjpjs-waaaa-aaaac-awbxa-cai"
+>>>>>>> 806bb3c (final commit)
   }
 }
